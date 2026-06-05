@@ -39,6 +39,7 @@ const services: { title: string; description: string }[] = [
           </p>
           <div class="actions">
             <a class="contact" href="mailto:aric@aricgardner.com">Contact Aric</a>
+            <a class="product-link" href="/sentinel-winter/">Sentinel Winter</a>
             <span class="status">Available for focused builds</span>
           </div>
         </div>
@@ -226,11 +227,30 @@ const services: { title: string; description: string }[] = [
   }
 
   .contact:hover,
-  .contact:focus-visible {
+  .contact:focus-visible,
+  .product-link:hover,
+  .product-link:focus-visible {
     transform: translateY(-1px);
     box-shadow:
       0 0 0 1px rgba(255, 255, 255, 0.18) inset,
       0 0 44px rgba(255, 61, 242, 0.4);
+  }
+
+  .product-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 20px;
+    border: 1px solid var(--line-hot);
+    color: var(--ink);
+    background: rgba(8, 12, 28, 0.74);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.08) inset,
+      0 0 28px rgba(255, 61, 242, 0.24);
+    text-decoration: none;
+    font-weight: 900;
+    backdrop-filter: blur(16px);
   }
 
   .status {
@@ -395,6 +415,10 @@ const services: { title: string; description: string }[] = [
     }
 
     .contact {
+      width: 100%;
+    }
+
+    .product-link {
       width: 100%;
     }
   }

@@ -1,0 +1,593 @@
+---
+const architecture = [
+  {
+    title: 'Sensing Layer',
+    description:
+      'A distributed network of six or more ESP32-CAM nodes with hardware-masked PIR sensors or active IR break-beams to reduce false triggers from wind, snowfall, and drifting debris.',
+  },
+  {
+    title: 'Intelligence Hub',
+    description:
+      'An industrial ARM gateway running OpenWrt handles routing, local video storage, event logic, and secure bridging between the remote user and the property.',
+  },
+  {
+    title: 'Remote Response',
+    description:
+      'An ELRS radio-link bridge lets an operator pilot a rugged tracked UGV from anywhere to investigate, document, or deter intruders in real time.',
+  },
+  {
+    title: 'Satellite Backhaul',
+    description:
+      'Starlink is gated behind a physical power relay so the 50W to 75W draw only occurs during confirmed events or scheduled maintenance windows.',
+  },
+];
+
+const northernStrategy = [
+  '200W+ vertical solar array mounted at 90 degrees to shed snow and capture low-angle winter sun.',
+  '100Ah self-heating LiFePO4 battery banks with BMS-controlled heating pads for safe cold-weather charging.',
+  'Industrial buck converters for direct 12V DC distribution and fewer conversion losses.',
+  'Tracked winter UGV with high-torque motors, IP-rated camera, ELRS receiver, and sub-zero operating assumptions.',
+];
+
+const values = [
+  {
+    title: 'Energy Efficient',
+    description:
+      'Idle draw stays under 2W, preserving autonomy for up to six days through heavy winter storms without solar input.',
+  },
+  {
+    title: 'Actionable Intelligence',
+    description:
+      'The system records local video first, then brings satellite online only when there is evidence worth reviewing.',
+  },
+  {
+    title: 'Physical Deterrence',
+    description:
+      'A remotely piloted UGV turns the system from a passive witness into an active site guardian.',
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sentinel Winter | Aric Gardner</title>
+    <meta
+      name="description"
+      content="Sentinel Winter is an autonomous off-grid security system for remote northern properties with low-power sensors, Starlink backhaul, and remote UGV response."
+    />
+  </head>
+  <body>
+    <div class="ambient" aria-hidden="true"></div>
+    <main>
+      <nav aria-label="Primary">
+        <a href="/">Aric Gardner</a>
+        <a href="mailto:aric@aricgardner.com">Start a Build</a>
+      </nav>
+
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <p class="eyebrow">Sentinel Winter // Off-Grid Security</p>
+          <h1 id="hero-title">Autonomous surveillance for remote northern properties.</h1>
+          <p class="intro">
+            Sentinel Winter is a low-power, motion-triggered security network built for extreme cold, deep snow, limited
+            connectivity, and long periods without human intervention.
+          </p>
+          <div class="actions">
+            <a class="contact" href="mailto:aric@aricgardner.com?subject=Sentinel%20Winter">Discuss Sentinel Winter</a>
+            <span class="status">Designed for Northern Québec conditions</span>
+          </div>
+        </div>
+
+        <aside class="signal-panel" aria-label="System profile">
+          <p class="panel-kicker">Power Architecture</p>
+          <h2>Milliwatt-to-Megawatt</h2>
+          <p>
+            Sensors idle in a micro-power watch state. Confirmed threats wake the gateway, satellite uplink, recording,
+            and remote response systems only when they are needed.
+          </p>
+          <dl>
+            <div>
+              <dt>Idle draw</dt>
+              <dd>&lt;2W</dd>
+            </div>
+            <div>
+              <dt>Storm autonomy</dt>
+              <dd>Up to 6 days</dd>
+            </div>
+            <div>
+              <dt>Backhaul</dt>
+              <dd>Relay-gated Starlink</dd>
+            </div>
+          </dl>
+        </aside>
+      </section>
+
+      <section class="mission">
+        <p class="section-label">Mission</p>
+        <p>
+          Provide autonomous, low-power, wide-area surveillance and remote intervention for off-grid properties where
+          standard commercial security systems fail because they assume reliable grid power, broadband, easy access, and
+          mild weather.
+        </p>
+      </section>
+
+      <section class="grid-section" aria-labelledby="architecture-title">
+        <div class="section-heading">
+          <p class="section-label">Core System</p>
+          <h2 id="architecture-title">Security stack</h2>
+        </div>
+        <div class="cards">
+          {
+            architecture.map((item) => (
+              <article class="card">
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="split">
+        <div class="section-heading">
+          <p class="section-label">Northern Deployment</p>
+          <h2>Built around winter, not despite it.</h2>
+        </div>
+        <ul>
+          {northernStrategy.map((item) => <li>{item}</li>)}
+        </ul>
+      </section>
+
+      <section class="grid-section" aria-labelledby="value-title">
+        <div class="section-heading">
+          <p class="section-label">Value Proposition</p>
+          <h2 id="value-title">From alert fatigue to response.</h2>
+        </div>
+        <div class="cards values">
+          {
+            values.map((item) => (
+              <article class="card">
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+
+      <footer>
+        <span>&copy; 2026 Aric Gardner. Sentinel Winter concept and implementation planning.</span>
+      </footer>
+    </main>
+  </body>
+</html>
+
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #050611;
+    --ink: #f4fbff;
+    --muted: #a8b8c7;
+    --cyan: #41f5ff;
+    --magenta: #ff3df2;
+    --lime: #d5ff62;
+    --panel: rgba(8, 12, 28, 0.72);
+    --panel-strong: rgba(7, 11, 28, 0.9);
+    --line: rgba(88, 245, 255, 0.3);
+    --line-hot: rgba(255, 61, 242, 0.42);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family:
+      Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--ink);
+    background:
+      linear-gradient(90deg, rgba(5, 6, 17, 0.97), rgba(5, 6, 17, 0.77) 50%, rgba(5, 6, 17, 0.68)),
+      linear-gradient(180deg, rgba(5, 6, 17, 0.2), var(--bg) 84%),
+      url("/assets/hypr-vapor-hero.png") center top / cover no-repeat fixed,
+      var(--bg);
+    line-height: 1.55;
+  }
+
+  body::before,
+  body::after,
+  .ambient {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  body::before {
+    content: "";
+    z-index: -2;
+    background-image:
+      linear-gradient(rgba(65, 245, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 61, 242, 0.05) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 88%);
+  }
+
+  body::after {
+    content: "";
+    z-index: -1;
+    background: repeating-linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.035) 0,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px,
+      transparent 5px
+    );
+    opacity: 0.42;
+  }
+
+  .ambient {
+    z-index: -3;
+    background:
+      radial-gradient(circle at 83% 18%, rgba(255, 61, 242, 0.38), transparent 27%),
+      radial-gradient(circle at 18% 76%, rgba(65, 245, 255, 0.23), transparent 32%),
+      linear-gradient(135deg, rgba(213, 255, 98, 0.06), transparent 44%);
+    filter: blur(18px);
+  }
+
+  main {
+    width: min(1120px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 28px 0 36px;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 0;
+  }
+
+  nav a {
+    color: var(--muted);
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  nav a:hover,
+  nav a:focus-visible {
+    color: var(--cyan);
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 390px);
+    align-items: center;
+    min-height: calc(100svh - 70px);
+    gap: 42px;
+    padding: 72px 0 82px;
+  }
+
+  .eyebrow,
+  .section-label,
+  .panel-kicker {
+    margin: 0 0 18px;
+    color: var(--cyan);
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    padding: 8px 11px;
+    border: 1px solid var(--line);
+    background: rgba(3, 8, 22, 0.72);
+    box-shadow: 0 0 28px rgba(65, 245, 255, 0.18);
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin-top: 0;
+  }
+
+  h1 {
+    max-width: 830px;
+    margin-bottom: 30px;
+    font-size: clamp(2.8rem, 7vw, 6.8rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: 0;
+    text-shadow:
+      0 0 22px rgba(65, 245, 255, 0.22),
+      0 0 54px rgba(255, 61, 242, 0.17);
+  }
+
+  .intro {
+    max-width: 710px;
+    margin-bottom: 34px;
+    color: var(--muted);
+    font-size: clamp(1.06rem, 2vw, 1.28rem);
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .contact {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 20px;
+    border: 1px solid rgba(65, 245, 255, 0.78);
+    color: #051019;
+    background: linear-gradient(90deg, var(--cyan), var(--lime));
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.12) inset,
+      0 0 34px rgba(65, 245, 255, 0.42);
+    text-decoration: none;
+    font-weight: 900;
+  }
+
+  .contact:hover,
+  .contact:focus-visible {
+    transform: translateY(-1px);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.18) inset,
+      0 0 44px rgba(255, 61, 242, 0.4);
+  }
+
+  .status {
+    color: var(--muted);
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 0.88rem;
+  }
+
+  .status::before {
+    content: "";
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    margin-right: 10px;
+    border-radius: 999px;
+    background: var(--lime);
+    box-shadow: 0 0 18px var(--lime);
+  }
+
+  .signal-panel,
+  .mission,
+  .card,
+  .split {
+    border: 1px solid rgba(65, 245, 255, 0.24);
+    background: var(--panel);
+    box-shadow:
+      0 18px 60px rgba(0, 0, 0, 0.34),
+      0 0 0 1px rgba(255, 61, 242, 0.08) inset;
+    backdrop-filter: blur(20px);
+  }
+
+  .signal-panel {
+    padding: 24px;
+  }
+
+  .signal-panel h2 {
+    margin-bottom: 14px;
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+
+  .signal-panel p {
+    color: var(--muted);
+  }
+
+  dl {
+    display: grid;
+    gap: 12px;
+    margin: 26px 0 0;
+  }
+
+  dl div {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(65, 245, 255, 0.18);
+  }
+
+  dt,
+  dd {
+    margin: 0;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 0.82rem;
+  }
+
+  dt {
+    color: var(--muted);
+  }
+
+  dd {
+    color: var(--lime);
+    font-weight: 900;
+    text-align: right;
+  }
+
+  .mission {
+    margin-top: -40px;
+    padding: 30px;
+  }
+
+  .mission p:last-child {
+    max-width: 900px;
+    margin-bottom: 0;
+    color: #dcecf5;
+    font-size: clamp(1.2rem, 2vw, 1.55rem);
+    line-height: 1.35;
+  }
+
+  .grid-section,
+  .split {
+    margin-top: 22px;
+  }
+
+  .section-heading {
+    margin-bottom: 18px;
+  }
+
+  .section-heading h2 {
+    max-width: 680px;
+    margin-bottom: 0;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 0.96;
+    letter-spacing: 0;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .values {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .card {
+    position: relative;
+    min-height: 248px;
+    overflow: hidden;
+    padding: 22px;
+  }
+
+  .card::before,
+  .split::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--cyan), var(--magenta), var(--lime));
+  }
+
+  .card h3 {
+    margin-bottom: 12px;
+    font-size: 1.08rem;
+  }
+
+  .card p {
+    margin-bottom: 0;
+    color: var(--muted);
+  }
+
+  .split {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 36px;
+    overflow: hidden;
+    padding: 30px;
+  }
+
+  ul {
+    display: grid;
+    gap: 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    padding-left: 22px;
+    color: var(--muted);
+  }
+
+  li::before {
+    content: "//";
+    margin-left: -22px;
+    margin-right: 8px;
+    color: var(--magenta);
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-weight: 900;
+  }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(65, 245, 255, 0.18);
+    color: rgba(168, 184, 199, 0.78);
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 0.82rem;
+  }
+
+  @media (max-width: 980px) {
+    body {
+      background-position: 62% top;
+      background-attachment: scroll;
+    }
+
+    .hero,
+    .split {
+      grid-template-columns: 1fr;
+    }
+
+    .hero {
+      min-height: auto;
+      padding: 58px 0 84px;
+    }
+
+    .signal-panel {
+      max-width: 480px;
+    }
+
+    .cards,
+    .values {
+      grid-template-columns: 1fr;
+    }
+
+    .card {
+      min-height: 0;
+    }
+  }
+
+  @media (max-width: 560px) {
+    main {
+      width: min(100% - 28px, 1120px);
+    }
+
+    nav {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .actions {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .contact {
+      width: 100%;
+    }
+
+    .mission,
+    .split,
+    .signal-panel,
+    .card {
+      padding: 20px;
+    }
+  }
+</style>
