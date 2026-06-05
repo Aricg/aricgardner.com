@@ -1,62 +1,62 @@
 ---
 const architecture = [
   {
-    title: 'Couche de détection',
+    title: 'Sensing Layer',
     description:
-      'Un réseau distribué de six noeuds ESP32-CAM ou plus, avec capteurs PIR masqués matériellement ou barrières infrarouges actives, pour réduire les fausses alertes causées par le vent, la neige et les débris.',
+      'A distributed network of six or more ESP32-CAM nodes with hardware-masked PIR sensors or active IR break-beams to reduce false triggers from wind, snowfall, and drifting debris.',
   },
   {
-    title: 'Centre intelligent',
+    title: 'Intelligence Hub',
     description:
-      "Une passerelle ARM industrielle sous OpenWrt gère le routage, le stockage vidéo local, la logique d'événement et le pont sécurisé entre l'utilisateur à distance et la propriété.",
+      'An industrial ARM gateway running OpenWrt handles routing, local video storage, event logic, and secure bridging between the remote user and the property.',
   },
   {
-    title: 'Intervention à distance',
+    title: 'Remote Response',
     description:
-      "Un pont radio ELRS permet à un opérateur de piloter un UGV chenillé robuste de n'importe où pour enquêter, documenter ou dissuader les intrus en temps réel.",
+      'An ELRS radio-link bridge lets an operator pilot a rugged tracked UGV from anywhere to investigate, document, or deter intruders in real time.',
   },
   {
-    title: 'Liaison satellite',
+    title: 'Satellite Backhaul',
     description:
-      "Le terminal Starlink est contrôlé par un relais d'alimentation physique afin que la consommation de 50 W à 75 W ne survienne que lors d'événements confirmés ou de fenêtres de maintenance planifiées.",
+      'Starlink is gated behind a physical power relay so the 50W to 75W draw only occurs during confirmed events or scheduled maintenance windows.',
   },
 ];
 
 const northernStrategy = [
-  "Panneaux solaires verticaux de 200 W+ montés à 90 degrés pour éviter l'accumulation de neige et capter le soleil hivernal bas sur l'horizon.",
-  'Batteries LiFePO4 autochauffantes de 100 Ah avec coussins chauffants contrôlés par BMS pour une recharge sécuritaire par grand froid.',
-  'Convertisseurs abaisseurs industriels pour une distribution directe en 12 V CC et moins de pertes de conversion.',
-  'UGV hivernal chenillé avec moteurs à couple élevé, caméra cotée IP, récepteur ELRS et conception prévue pour les températures sous zéro.',
+  '200W+ vertical solar array mounted at 90 degrees to shed snow and capture low-angle winter sun.',
+  '100Ah self-heating LiFePO4 battery banks with BMS-controlled heating pads for safe cold-weather charging.',
+  'Industrial buck converters for direct 12V DC distribution and fewer conversion losses.',
+  'Tracked winter UGV with high-torque motors, IP-rated camera, ELRS receiver, and sub-zero operating assumptions.',
 ];
 
 const values = [
   {
-    title: 'Économe en énergie',
+    title: 'Energy Efficient',
     description:
-      "La consommation au repos reste sous 2 W, ce qui préserve jusqu'à six jours d'autonomie pendant les tempêtes hivernales sans apport solaire.",
+      'Idle draw stays under 2W, preserving autonomy for up to six days through heavy winter storms without solar input.',
   },
   {
-    title: 'Renseignement exploitable',
+    title: 'Actionable Intelligence',
     description:
-      "Le système enregistre d'abord la vidéo localement, puis active le satellite seulement quand il y a une preuve utile à évaluer.",
+      'The system records local video first, then brings satellite online only when there is evidence worth reviewing.',
   },
   {
-    title: 'Dissuasion physique',
+    title: 'Physical Deterrence',
     description:
-      "Un UGV piloté à distance transforme le système d'un témoin passif en gardien actif du site.",
+      'A remotely piloted UGV turns the system from a passive witness into an active site guardian.',
   },
 ];
 ---
 
 <!doctype html>
-<html lang="fr-CA">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Sentinel Winter | Aric Gardner</title>
     <meta
       name="description"
-      content="Sentinel Winter est un système de sécurité autonome hors réseau pour propriétés nordiques, avec capteurs basse consommation, liaison Starlink et intervention UGV à distance."
+      content="Sentinel Winter is an autonomous off-grid security system for remote northern properties with low-power sensors, Starlink backhaul, and remote UGV response."
     />
     <link rel="alternate" hreflang="fr-CA" href="/sentinel-winter/" />
     <link rel="alternate" hreflang="en" href="/en/sentinel-winter/" />
@@ -65,44 +65,44 @@ const values = [
     <div class="ambient" aria-hidden="true"></div>
     <main>
       <nav aria-label="Primary">
-        <a href="/">Aric Gardner</a>
-        <a href="/en/sentinel-winter/" lang="en">EN</a>
-        <a href="mailto:aric@aricgardner.com">Démarrer un projet</a>
+        <a href="/en/">Aric Gardner</a>
+        <a href="/sentinel-winter/" lang="fr-CA">FR</a>
+        <a href="mailto:aric@aricgardner.com">Start a Build</a>
       </nav>
 
       <section class="hero" aria-labelledby="hero-title">
         <div>
-          <p class="eyebrow">Sentinel Winter // Sécurité hors réseau</p>
-          <h1 id="hero-title">Surveillance autonome pour propriétés nordiques isolées.</h1>
+          <p class="eyebrow">Sentinel Winter // Off-Grid Security</p>
+          <h1 id="hero-title">Autonomous surveillance for remote northern properties.</h1>
           <p class="intro">
-            Sentinel Winter est un réseau de sécurité basse consommation, déclenché par mouvement, conçu pour le froid
-            extrême, la neige profonde, la connectivité limitée et les longues périodes sans intervention humaine.
+            Sentinel Winter is a low-power, motion-triggered security network built for extreme cold, deep snow, limited
+            connectivity, and long periods without human intervention.
           </p>
           <div class="actions">
-            <a class="contact" href="mailto:aric@aricgardner.com?subject=Sentinel%20Winter">Discuter de Sentinel Winter</a>
-            <span class="status">Conçu pour les conditions du Nord québécois</span>
+            <a class="contact" href="mailto:aric@aricgardner.com?subject=Sentinel%20Winter">Discuss Sentinel Winter</a>
+            <span class="status">Designed for Northern Québec conditions</span>
           </div>
         </div>
 
-        <aside class="signal-panel" aria-label="Profil du système">
-          <p class="panel-kicker">Architecture d'énergie</p>
+        <aside class="signal-panel" aria-label="System profile">
+          <p class="panel-kicker">Power Architecture</p>
           <h2>Milliwatt-to-Megawatt</h2>
           <p>
-            Les capteurs restent en veille à très basse consommation. Les menaces confirmées réveillent la passerelle,
-            la liaison satellite, l'enregistrement et les systèmes d'intervention seulement lorsque nécessaire.
+            Sensors idle in a micro-power watch state. Confirmed threats wake the gateway, satellite uplink, recording,
+            and remote response systems only when they are needed.
           </p>
           <dl>
             <div>
-              <dt>Repos</dt>
+              <dt>Idle draw</dt>
               <dd>&lt;2W</dd>
             </div>
             <div>
-              <dt>Autonomie en tempete</dt>
-              <dd>Jusqu'à 6 jours</dd>
+              <dt>Storm autonomy</dt>
+              <dd>Up to 6 days</dd>
             </div>
             <div>
-              <dt>Liaison</dt>
-              <dd>Starlink sur relais</dd>
+              <dt>Backhaul</dt>
+              <dd>Relay-gated Starlink</dd>
             </div>
           </dl>
         </aside>
@@ -111,16 +111,16 @@ const values = [
       <section class="mission">
         <p class="section-label">Mission</p>
         <p>
-          Fournir une surveillance autonome, basse consommation et à grande portée, avec intervention à distance, pour
-          les propriétés hors réseau où les systèmes commerciaux standards échouent parce qu'ils supposent du courant
-          fiable, Internet haute vitesse, un accès facile et une météo clémente.
+          Provide autonomous, low-power, wide-area surveillance and remote intervention for off-grid properties where
+          standard commercial security systems fail because they assume reliable grid power, broadband, easy access, and
+          mild weather.
         </p>
       </section>
 
       <section class="grid-section" aria-labelledby="architecture-title">
         <div class="section-heading">
-          <p class="section-label">Système central</p>
-          <h2 id="architecture-title">Pile de sécurité</h2>
+          <p class="section-label">Core System</p>
+          <h2 id="architecture-title">Security stack</h2>
         </div>
         <div class="cards">
           {
@@ -136,8 +136,8 @@ const values = [
 
       <section class="split">
         <div class="section-heading">
-          <p class="section-label">Déploiement nordique</p>
-          <h2>Bâti autour de l'hiver, pas malgré lui.</h2>
+          <p class="section-label">Northern Deployment</p>
+          <h2>Built around winter, not despite it.</h2>
         </div>
         <ul>
           {northernStrategy.map((item) => <li>{item}</li>)}
@@ -146,8 +146,8 @@ const values = [
 
       <section class="grid-section" aria-labelledby="value-title">
         <div class="section-heading">
-          <p class="section-label">Proposition de valeur</p>
-          <h2 id="value-title">Moins de fausses alertes. Plus de réponse.</h2>
+          <p class="section-label">Value Proposition</p>
+          <h2 id="value-title">From alert fatigue to response.</h2>
         </div>
         <div class="cards values">
           {
@@ -162,7 +162,7 @@ const values = [
       </section>
 
       <footer>
-        <span>&copy; 2026 Aric Gardner. Concept et planification d'implémentation Sentinel Winter.</span>
+        <span>&copy; 2026 Aric Gardner. Sentinel Winter concept and implementation planning.</span>
       </footer>
     </main>
   </body>
